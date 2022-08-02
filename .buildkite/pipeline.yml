@@ -1,3 +1,15 @@
 steps:
-  - label: ":terraform:"
-    command: echo hello
+  - label: ":terraform: plan"
+    commands:
+      - terraform init
+      - terraform plan -out plan
+    artifact_paths:
+      - plan
+
+  - block: run this plan?
+
+  - label: ":terraform: apply"
+    commands:
+      - buildkite-agent artifact download plan .
+      - terraform init
+      - terraform apply plan
