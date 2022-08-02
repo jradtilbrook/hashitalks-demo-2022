@@ -15,5 +15,6 @@ terraform {
 }
 
 provider "buildkite" {
+  # api_token set from BUILDKITE_API_TOKEN
   organization = "hashitalk-2022"
 }
