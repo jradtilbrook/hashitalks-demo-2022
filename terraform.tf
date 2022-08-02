@@ -15,6 +15,10 @@ terraform {
       source = "buildkite/buildkite"
       version = "0.11.0"
     }
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
+    }
   }
 }
 
@@ -25,4 +29,8 @@ provider "aws" {
 provider "buildkite" {
   # api_token set from BUILDKITE_API_TOKEN
   organization = "hashitalk-2022"
+}
+
+provider "github" {
+  # token set from GITHUB_TOKEN
 }
