@@ -9,6 +9,8 @@ resource "aws_cloudformation_stack" "buildkite_agent_default" {
   parameters =  {
     AgentsPerInstance        = 1
     InstanceType             = "t3.small"
+    KeyName                  = "jarryd MBP"
+    ManagedPolicyARN         = "arn:aws:iam::aws:policy/AdministratorAccess"
     MaxSize                  = 1
     MinSize                  = 1
     RootVolumeSize           = 50
